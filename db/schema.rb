@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# encoding: UTF-8
-=======
->>>>>>> origin/master
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -14,15 +10,6 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20120210195135) do
-
-  create_table "users", :force => true do |t|
-    t.string   "name"
-    t.string   "password_digest"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-=======
 ActiveRecord::Schema.define(:version => 20120210215503) do
 
   create_table "comments", :force => true do |t|
@@ -43,7 +30,13 @@ ActiveRecord::Schema.define(:version => 20120210215503) do
     t.text     "notes"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
->>>>>>> origin/master
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "password_digest"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
 end
