@@ -1,5 +1,4 @@
 Deisgner::Application.routes.draw do
-<<<<<<< HEAD
   get "admin" => 'admin#index'
 
   controller :sessions do 
@@ -10,12 +9,10 @@ Deisgner::Application.routes.draw do
 
   resources :users
 
-=======
   resources :deisgns do
   	resources :comments
   end
 
->>>>>>> origin/master
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
