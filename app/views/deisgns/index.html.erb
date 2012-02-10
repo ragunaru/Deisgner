@@ -1,0 +1,27 @@
+<h1>Listing deisgns</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Url</th>
+    <th>Notes</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @deisgns.each do |deisgn| %>
+  <tr>
+    <td><%= deisgn.title %></td>
+    <td><%= deisgn.url %></td>
+    <td><%= deisgn.notes %></td>
+    <td><%= link_to 'Show', deisgn %></td>
+    <td><%= link_to 'Edit', edit_deisgn_path(deisgn) %></td>
+    <td><%= link_to 'Destroy', deisgn, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Deisgn', new_deisgn_path %>

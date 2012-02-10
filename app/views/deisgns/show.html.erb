@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @deisgn.title %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @deisgn.url %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @deisgn.notes %>
+</p>
+
+<p>
+	<h2>Shit people say about this deisgn</h2>
+	<ul>
+		<% @deisgn.comments.each do |comment| %>
+		<li>
+			<h3><a href="mailto:<%= comment.email %>"><%= comment.commenter %></a></h3>
+			<a href="http://<%= comment.url %>"><%= comment.url %></a>
+			
+			<p><%= comment.body %></p>
+		</li>
+		<% end %>
+	</ul>
+</p>
+
+<h2>Say some shit yourself</h2>
+
+<div>
+	<%= form_for([@deisgn, @deisgn.comments.build]) do |f| %>
+		<div>
+			<%= f.label :commenter %>
+			<%= f.text_field :commenter %>
+		</div>
+		<div>
+			<%= f.label :email %>
+			<%= f.text_field :email %>
+		</div>
+		<div>
+			<%= f.label :url %>
+			<%= f.text_field :url %>
+		</div>
+		<div>
+			<%= f.label :body %>
+			<%= f.text_area :body %>
+		</div>
+		<div>
+			<%= f.submit %>
+		</div>
+	<% end %>
+</div>
+
+<%= link_to 'Edit', edit_deisgn_path(@deisgn) %> |
+<%= link_to 'Back', deisgns_path %>
